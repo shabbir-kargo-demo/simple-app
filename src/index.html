@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .env-value {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Demo Application</h1>
+        <p>This is a simple demo application that displays environment variables:</p>
+        <div class="env-value">
+            <strong>APP_VERSION:</strong> <span id="version"></span>
+        </div>
+        <div class="env-value">
+            <strong>ENVIRONMENT:</strong> <span id="env"></span>
+        </div>
+    </div>
+    <script>
+        // These values will be replaced by environment variables during container startup
+        document.getElementById('version').textContent = '%%APP_VERSION%%';
+        document.getElementById('env').textContent = '%%ENVIRONMENT%%';
+    </script>
+</body>
+</html>

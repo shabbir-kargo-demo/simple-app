@@ -1,0 +1,36 @@
+# Default values for demo-app
+replicaCount: 1
+
+image:
+  repository: your-dockerhub-username/kargo-demo
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP
+  port: 3000
+
+env:
+  - name: APP_VERSION
+    value: "1.0.0"
+  - name: ENVIRONMENT
+    value: "production"
+  - name: PORT
+    value: "3000"
+
+resources:
+  limits:
+    cpu: 200m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
